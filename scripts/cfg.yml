@@ -1,0 +1,39 @@
+_name: ESMFoldConfig
+esm_type: esm2_3B
+fp16_esm: true
+use_esm_attn_map: false
+esm_ablate_pairwise: false
+esm_ablate_sequence: false
+esm_input_dropout: 0
+trunk:
+  _name: FoldingTrunkConfig
+  num_blocks: 48
+  sequence_state_dim: 1024
+  pairwise_state_dim: 128
+  sequence_head_width: 32
+  pairwise_head_width: 32
+  position_bins: 32
+  dropout: 0
+  layer_drop: 0
+  cpu_grad_checkpoint: false
+  max_recycles: 4
+  chunk_size: null
+  structure_module:
+    c_s: 384
+    c_z: 128
+    c_ipa: 16
+    c_resnet: 128
+    no_heads_ipa: 12
+    no_qk_points: 4
+    no_v_points: 8
+    dropout_rate: 0.1
+    no_blocks: 8
+    no_transition_layers: 1
+    no_resnet_blocks: 2
+    no_angles: 7
+    trans_scale_factor: 10
+    epsilon: 1.0e-08
+    'inf': 100000.0
+embed_aa: true
+bypass_lm: false
+lddt_head_hid_dim: 128
